@@ -127,6 +127,7 @@ export default class ProgressBar extends Component {
       style,
       unfilledColor,
       width,
+      progressStyles,
       ...restProps
     } = this.props;
 
@@ -139,7 +140,7 @@ export default class ProgressBar extends Component {
       overflow: 'hidden',
       backgroundColor: unfilledColor,
     };
-    const progressStyle = {
+    const progressStyle = {...progressStyles, ...{
       backgroundColor: color,
       height,
       transform: [
@@ -163,7 +164,7 @@ export default class ProgressBar extends Component {
           }),
         },
       ],
-    };
+    }};
 
     return (
       <View
